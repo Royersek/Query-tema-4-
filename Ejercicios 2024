@@ -1,0 +1,4 @@
+MariaDB [queries_2023]> SELECT nombre, apellido, altura
+    -> FROM jugadores
+    -> WHERE pos = 'DEL'
+    -> LIMIT 1;
