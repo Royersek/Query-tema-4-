@@ -1,3 +1,82 @@
+No limitarse a resolver los ejercicios, crea tus propias consultas.
+
+13) SELECT gobernador FROM provincias WHERE nombre = 'Neuquen';
+
+14) SELECT capital FROM provincias WHERE nombre = 'Misiones';
+15) SELECT nombre FROM provincias WHERE poblacion > 1000000;
+16) SELECT nombre, (poblacion / superficie) AS densidad_poblacion FROM provincias;
+17) SELECT nombre FROM provincias WHERE gobernador = 'Omar Perotti';
+18) SELECT nombre FROM provincias WHERE nombre != 'Ciudad Autonoma de Buenos Aires';
+19) SELECT nombre FROM provincias WHERE nombre LIKE 'San%' OR nombre LIKE 'Santa%';
+20) SELECT nombre FROM provincias WHERE superficie BETWEEN 100000 AND 200000;
+
+21) SELECT gobernador
+FROM provincias
+WHERE SUBSTRING_INDEX(gobernador, ' ', -1) LIKE 'K%';
+
+22) SELECT nombre, poblacion 
+FROM provincias
+ORDER BY poblacion DESC;
+
+23) SELECT nombre 
+FROM provincias 
+ORDER BY superficie ASC 
+LIMIT 1;
+
+24) SELECT nombre 
+FROM provincias 
+WHERE nombre = capital;
+
+25) SELECT nombre 
+FROM provincias 
+ORDER BY autonoma_desde DESC 
+LIMIT 1;
+
+26) SELECT SUM(superficie) AS superficie_total 
+FROM provincias;
+
+27) SELECT SUM(poblacion) AS poblacion_total 
+FROM provincias;
+
+28) SELECT nombre AS Provincia, superficie,
+       (superficie / 2780400.0) * 100 AS Porcentaje_Superficie
+FROM provincias;
+
+29) SELECT nombre AS Provincia, autonoma_desde
+FROM provincias
+WHERE autonoma_desde <= '1900-12-31';
+
+30) SELECT COUNT(*) AS cantidad_provincias
+FROM provincias;
+
+31) SELECT COUNT(*) AS cantidad_gustavo
+FROM provincias
+WHERE gobernador LIKE 'Gustavo%';
+
+32) SELECT nombre, capital
+FROM provincias
+WHERE nombre IN ('Mendoza', 'San Juan', 'San Luis');
+
+33) 
+
+34) SELECT CONCAT('Provincia de ', nombre) AS provincia
+FROM provincias
+WHERE nombre != 'Ciudad Autonoma de Buenos Aires';
+
+35) SELECT nombre, poblacion
+FROM provincias
+WHERE nombre IN ('Chubut', 'Neuquén', 'Río Negro', 'Santa Cruz')
+ORDER BY poblacion DESC
+LIMIT 1;
+
+36) SELECT DISTINCT capital
+FROM provincias
+WHERE gobernador LIKE '%Juan%'
+   OR poblacion > 3000000;
+
+
+
+
 MariaDB [queries_2023]> SELECT nombre, apellido, altura
     -> FROM jugadores
     -> WHERE pos = 'DEL'
