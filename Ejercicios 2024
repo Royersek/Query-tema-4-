@@ -57,7 +57,9 @@ WHERE gobernador LIKE 'Gustavo%';
 FROM provincias
 WHERE nombre IN ('Mendoza', 'San Juan', 'San Luis');
 
-33) 
+33) SELECT   nombre,  FLOOR(DATEDIFF(CURDATE(), autonoma_desde) / 365)
+FROM  provincias;
+
 
 34) SELECT CONCAT('Provincia de ', nombre) AS provincia
 FROM provincias
@@ -74,10 +76,102 @@ FROM provincias
 WHERE gobernador LIKE '%Juan%'
    OR poblacion > 3000000;
 
+37) SELECT 
+    CONCAT('En ', nombre, ' gobierna ', gobernador, ' y la capital es ', capital) AS descripcion
+FROM 
+    provincias;
+
+38) SELECT nombre, estadio
+FROM equipos
+WHERE ciudad = 'Mendoza';
+
+39) SELECT nombre, fecha_fund
+FROM equipos
+ORDER BY fecha_fund
+LIMIT 1;
+
+40) SELECT nombre, estadio             (no existe en la tabla un estadio llamado armando)
+FROM equipos
+WHERE estadio LIKE '%Armando%';
+
+41) SELECT *
+FROM materias
+WHERE id = 4;
+
+42) SELECT nombre                                     (lo mismo que en la 40)
+FROM materias
+WHERE curso = 5 AND esp = 'Automotores';
+
+ SELECT nombre, fecha_fund
+ FROM equipos
+ WHERE fecha_fund >= "1900-12-31";
 
 
+43) SELECT nombre
+FROM materias
+WHERE curso = 2;
+
+44) 
 
 MariaDB [queries_2023]> SELECT nombre, apellido, altura
     -> FROM jugadores
     -> WHERE pos = 'DEL'
     -> LIMIT 1;
+
+45)  SELECT SUM(cant_socios) AS total_socios
+     FROM equipos;
+
+46) SELECT nombre
+FROM materias
+WHERE contraturno = TRUE;
+
+47) SELECT SUM(cant_horas) AS total_horas
+FROM materias
+WHERE curso = 4 AND esp = 'Computacion';
+
+48) SELECT nombre, ciudad
+FROM equipos
+WHERE nombre LIKE 'Estudiantes%';
+
+49) SELECT nombre
+FROM equipos
+WHERE division = 'Nacional B';
+
+50) SELECT nombre, cant_socios
+FROM equipos
+ORDER BY cant_socios DESC
+LIMIT 1;
+
+51) SELECT DISTINCT rotacion
+FROM materias
+WHERE curso = 1;
+
+52)  SELECT nombre, fecha_fund
+     FROM equipos
+     ORDER BY fecha_fund ASC;
+
+53) SELECT *
+FROM equipos
+WHERE id = 8;
+
+54) SELECT nombre
+FROM materias
+WHERE curso = 6 AND esp = 'Computacion';
+
+55) SELECT nombre, cant_horas
+FROM materias
+WHERE cant_horas IN (2, 3, 4);
+
+
+56) SELECT SUM(cant_horas) AS total_horas
+FROM materias
+WHERE curso = 6 AND esp = 'Automotores';
+
+57) SELECT nombre, cant_horas
+FROM materias
+WHERE cant_horas < 4;
+
+58) SELECT nombre, apellido
+FROM alumnos
+WHERE dni = 50123456;
+
