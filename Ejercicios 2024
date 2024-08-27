@@ -175,3 +175,11 @@ WHERE cant_horas < 4;
 FROM alumnos
 WHERE dni = 50123456;
 
+60) SELECT nombre, apellido, altura
+    FROM jugadores
+    ORDER BY EDAD ASC
+    LIMIT 1;
+
+61)  SELECT nombre
+    -> FROM equipos
+    -> WHERE ciudad NOT IN ("Buenos Aires", "La plata");
