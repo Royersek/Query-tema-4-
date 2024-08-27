@@ -183,3 +183,28 @@ WHERE dni = 50123456;
 61)  SELECT nombre
     -> FROM equipos
     -> WHERE ciudad NOT IN ("Buenos Aires", "La plata");
+
+62) SELECT * 
+FROM alumnos 
+WHERE apellido = 'Gonzalez' 
+  AND esp = 'Ciclo basico';
+
+63) SELECT nombre 
+FROM materias 
+WHERE esp = 'Computacion' 
+  AND contraturno = TRUE;
+
+64) SELECT nombre 
+FROM equipos 
+WHERE division = 'Nacional B' 
+  AND (localidad = 'CABA' OR campeonatos >= 1);
+
+65)  SELECT nombre, apellido, altura, pos
+FROM jugadores
+ORDER BY altura DESC
+LIMIT 10;
+
+66) SELECT nombre, apellido
+    FROM alumnos
+    WHERE curso = 4
+    ORDER BY apellido ASC, nombre ASC;
